@@ -1,0 +1,541 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mediclinic Middle East • Investment Opportunity</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&amp;family=Space+Grotesk:wght@500&amp;display=swap');
+        
+        :root {
+            --tw-color-primary: #00d4aa;
+        }
+        
+        * {
+            transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms;
+        }
+        
+        .tail-container * {
+            font-family: 'Inter', system_ui, sans-serif;
+        }
+        
+        .heading-font {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .slide {
+            animation: slideFade 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+        
+        @keyframes slideFade {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        
+        .hero-bg {
+            background: linear-gradient(92deg, #0a1729 0%, #11223f 100%);
+        }
+        
+        .nav-dot {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .nav-dot.active {
+            background-color: #00d4aa;
+            box-shadow: 0 0 0 4px rgba(0, 212, 170, 0.3);
+            transform: scale(1.2);
+        }
+        
+        .metric-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .metric-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 25px 25px 0 -10px #00d4aa;
+        }
+    </style>
+</head>
+<body class="tail-container bg-slate-950 text-white">
+    <!-- HEADER / NAV -->
+    <div class="fixed top-0 left-0 right-0 z-50 bg-slate-950/90 backdrop-blur-lg border-b border-white/10">
+        <div class="max-w-screen-2xl mx-auto px-8 py-5 flex items-center justify-between">
+            <div class="flex items-center gap-x-3">
+                <div class="w-9 h-9 bg-emerald-400 rounded-2xl flex items-center justify-center text-slate-950 font-bold text-2xl shadow-inner">🩺</div>
+                <h1 class="heading-font text-2xl tracking-[-1px]">Mediclinic Middle East</h1>
+            </div>
+            
+            <div class="flex items-center gap-x-8 text-sm font-medium">
+                <a onclick="navigateTo(0)" class="hover:text-[#00d4aa] flex items-center gap-x-1">
+                    <span class="text-[#00d4aa]">01</span> INVESTMENT THESIS
+                </a>
+                <div class="h-3 w-px bg-white/20"></div>
+                <button onclick="togglePlay()" 
+                        id="play-btn"
+                        class="flex items-center gap-x-2 px-5 h-9 bg-white/10 hover:bg-[#00d4aa] hover:text-slate-950 rounded-3xl text-sm font-semibold">
+                    <span id="play-text">▶ AUTO PLAY</span>
+                </button>
+            </div>
+
+            <div class="flex items-center gap-x-4">
+                <div onclick="prevSlide()" 
+                     class="w-9 h-9 flex items-center justify-center rounded-2xl border border-white/20 hover:border-[#00d4aa] hover:text-[#00d4aa] cursor-pointer text-xl">‹</div>
+                <div id="slide-counter" class="font-mono text-sm tabular-nums">01 / 09</div>
+                <div onclick="nextSlide()" 
+                     class="w-9 h-9 flex items-center justify-center rounded-2xl border border-white/20 hover:border-[#00d4aa] hover:text-[#00d4aa] cursor-pointer text-xl">›</div>
+            </div>
+        </div>
+        
+        <!-- Progress dots -->
+        <div id="progress-dots" class="flex justify-center gap-x-3 pb-4">
+            <!-- JS injected -->
+        </div>
+    </div>
+
+    <!-- SLIDES CONTAINER -->
+    <div id="slides-container" class="min-h-screen pt-24">
+        
+        <!-- SLIDE 1: HERO -->
+        <div id="slide-0" class="slide min-h-screen hero-bg flex items-center px-8">
+            <div class="max-w-screen-2xl mx-auto grid grid-cols-12 gap-12 items-center">
+                <div class="col-span-7">
+                    <div class="inline-flex items-center gap-x-2 bg-white/10 text-emerald-300 text-sm font-semibold px-6 h-9 rounded-3xl mb-6">
+                        UAE PRIVATE HEALTHCARE • INVESTMENT DECK
+                    </div>
+                    <h1 class="heading-font text-7xl leading-none tracking-[-2px] mb-6">
+                        Mediclinic Middle East<br>
+                        <span class="text-[#00d4aa]">A Unique &amp; High-Conviction</span><br>Investment for Funds
+                    </h1>
+                    <p class="text-3xl text-slate-300 max-w-lg mb-8">
+                        Premium private healthcare leader in the UAE with international scale, digital innovation, and resilient insurance-driven cash flows.
+                    </p>
+                    <div class="flex items-center gap-x-4">
+                        <button onclick="nextSlide()" 
+                                class="px-8 h-14 bg-[#00d4aa] hover:bg-emerald-300 text-slate-950 font-semibold text-xl rounded-3xl flex items-center">
+                            SEE WHY IT'S WORTHY →
+                        </button>
+                        <div class="text-slate-400 text-sm max-w-[200px]">
+                            Backed by Mediclinic International • 6 hospitals • 978 beds • Expanding digital &amp; medical tourism
+                        </div>
+                    </div>
+                    
+                    <!-- Trust signals -->
+                    <div class="mt-16 flex items-center gap-x-8 text-slate-400 text-sm">
+                        <div>✓ Part of global private healthcare group</div>
+                        <div>✓ 95%+ revenue from insurance</div>
+                        <div>✓ Medical tourism powerhouse</div>
+                        <div>✓ Digital-first patient journeys</div>
+                    </div>
+                </div>
+                
+                <!-- Right visual -->
+                <div class="col-span-5 relative">
+                    <div class="absolute -inset-6 bg-gradient-to-br from-[#00d4aa]/20 to-transparent rounded-[4rem] -rotate-6"></div>
+                    <div class="bg-slate-900/70 backdrop-blur-xl border border-white/10 rounded-3xl p-8 relative">
+                        <div class="text-center mb-6">
+                            <div class="inline-block px-6 py-2 bg-emerald-300 text-slate-950 font-semibold rounded-3xl text-sm mb-4">CURRENT SCALE</div>
+                        </div>
+                        <div class="grid grid-cols-3 gap-4 text-center">
+                            <div>
+                                <div class="text-5xl font-semibold text-[#00d4aa]">6</div>
+                                <div class="text-sm uppercase tracking-widest">Hospitals</div>
+                            </div>
+                            <div>
+                                <div class="text-5xl font-semibold text-[#00d4aa]">978</div>
+                                <div class="text-sm uppercase tracking-widest">Beds</div>
+                            </div>
+                            <div>
+                                <div class="text-5xl font-semibold text-[#00d4aa]">∞</div>
+                                <div class="text-sm uppercase tracking-widest">Clinics + Digital</div>
+                            </div>
+                        </div>
+                        <div class="mt-8 h-2 bg-white/10 rounded-3xl overflow-hidden">
+                            <div class="h-full w-4/5 bg-gradient-to-r from-[#00d4aa] to-emerald-300"></div>
+                        </div>
+                        <p class="text-center text-xs text-slate-400 mt-3">Strong occupancy + premium pricing in Dubai &amp; Abu Dhabi</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 2: OVERVIEW -->
+        <div id="slide-1" class="slide min-h-screen bg-white text-slate-900 px-8 flex items-center">
+            <div class="max-w-screen-2xl mx-auto">
+                <div class="flex justify-between items-baseline mb-12">
+                    <div>
+                        <span class="text-emerald-600 font-semibold">01 • COMPANY SNAPSHOT</span>
+                        <h2 class="heading-font text-5xl">Mediclinic Middle East at a Glance</h2>
+                    </div>
+                    <p class="max-w-xs text-slate-500">The UAE arm of international private healthcare group Mediclinic International</p>
+                </div>
+                
+                <div class="grid grid-cols-12 gap-8">
+                    <div class="col-span-4 metric-card bg-slate-100 rounded-3xl p-8">
+                        <div class="text-emerald-500 text-sm mb-3">OPERATIONS</div>
+                        <ul class="space-y-6 text-2xl">
+                            <li class="flex justify-between"><span>6 hospitals</span><span class="font-semibold">Dubai + Abu Dhabi</span></li>
+                            <li class="flex justify-between"><span>978 beds</span><span class="font-semibold">Inpatient capacity</span></li>
+                            <li class="flex justify-between"><span>Multiple outpatient clinics</span><span class="font-semibold">Strategic locations</span></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="col-span-4 metric-card bg-slate-100 rounded-3xl p-8">
+                        <div class="text-emerald-500 text-sm mb-3">SERVICE MIX</div>
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-4">
+                                <div class="flex-1 h-3 bg-emerald-400 rounded-full"></div>
+                                <div class="font-medium">Acute inpatient care</div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="flex-1 h-3 bg-emerald-300 rounded-full w-4/5"></div>
+                                <div class="font-medium">Day-case &amp; outpatient procedures</div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="flex-1 h-3 bg-emerald-200 rounded-full w-3/5"></div>
+                                <div class="font-medium">Specialty clinics + IVF (Bourn Hall)</div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="flex-1 h-3 bg-emerald-100 rounded-full w-2/5"></div>
+                                <div class="font-medium">Virtual health &amp; preventive programs</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-span-4 bg-gradient-to-br from-emerald-500 to-teal-400 text-white rounded-3xl p-8 flex flex-col justify-between">
+                        <div class="text-3xl leading-tight font-medium">
+                            Premium positioning with internationally recognised clinical standards
+                        </div>
+                        <div class="mt-auto pt-8 border-t border-white/30 text-sm opacity-90">
+                            Part of Mediclinic International (Switzerland, Southern Africa, UK stake) — sharing global best practices in quality, procurement &amp; innovation
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 3: UNIQUE BUSINESS MODEL -->
+        <div id="slide-2" class="slide min-h-screen px-8 flex items-center bg-slate-900">
+            <div class="max-w-screen-2xl mx-auto">
+                <span class="text-emerald-400 font-semibold">02 • WHAT MAKES IT UNIQUE</span>
+                <h2 class="heading-font text-5xl mb-12">A Differentiated Continuum-of-Care Model</h2>
+                
+                <div class="grid grid-cols-12 gap-6">
+                    <div class="col-span-3 p-6 border border-white/10 rounded-3xl hover:border-[#00d4aa]">
+                        <div class="text-[#00d4aa] text-6xl mb-4">01</div>
+                        <h4 class="text-2xl mb-2">Prevention-to-Treatment</h4>
+                        <p class="text-slate-400">Health Experience Hub • Mediclinic Woman &amp; Baby programs • Proactive screenings</p>
+                    </div>
+                    <div class="col-span-3 p-6 border border-white/10 rounded-3xl hover:border-[#00d4aa]">
+                        <div class="text-[#00d4aa] text-6xl mb-4">02</div>
+                        <h4 class="text-2xl mb-2">Digital Integration</h4>
+                        <p class="text-slate-400">Mediclinic App • Virtual Health Service • Drive-through &amp; home delivery</p>
+                    </div>
+                    <div class="col-span-3 p-6 border border-white/10 rounded-3xl hover:border-[#00d4aa]">
+                        <div class="text-[#00d4aa] text-6xl mb-4">03</div>
+                        <h4 class="text-2xl mb-2">Medical Tourism Engine</h4>
+                        <p class="text-slate-400">GCC + Africa + Asia patients seeking premium care in a safe, luxury destination</p>
+                    </div>
+                    <div class="col-span-3 p-6 border border-white/10 rounded-3xl hover:border-[#00d4aa]">
+                        <div class="text-[#00d4aa] text-6xl mb-4">04</div>
+                        <h4 class="text-2xl mb-2">Insurance Moat</h4>
+                        <p class="text-slate-400">~95% revenue from insured patients → predictable, high-margin cash flow</p>
+                    </div>
+                </div>
+                
+                <div class="mt-16 text-center text-slate-400 max-w-2xl mx-auto">
+                    Unlike traditional hospitals, Mediclinic creates a full patient lifecycle — driving loyalty, utilization, and recurring revenue in a capital-efficient way.
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 4: REVENUE RESILIENCE -->
+        <div id="slide-3" class="slide min-h-screen bg-emerald-50 text-slate-900 px-8 flex items-center">
+            <div class="max-w-screen-2xl mx-auto">
+                <span class="text-emerald-600 font-semibold">03 • REVENUE MODEL</span>
+                <h2 class="heading-font text-5xl mb-8">Stable, Diversified &amp; High-Quality Cash Flows</h2>
+                
+                <div class="flex justify-between items-end mb-8">
+                    <div class="text-4xl">Primary revenue drivers</div>
+                    <div class="text-sm text-emerald-600">Resilient even in macroeconomic cycles</div>
+                </div>
+                
+                <div class="grid grid-cols-4 gap-6">
+                    <div class="bg-white rounded-3xl p-8 shadow-inner">
+                        <div class="uppercase text-xs tracking-widest mb-3">Patient fees</div>
+                        <div class="text-6xl font-semibold text-emerald-500">40%</div>
+                        <p class="text-slate-500 mt-6">Consultations, procedures, packages</p>
+                    </div>
+                    <div class="bg-white rounded-3xl p-8 shadow-inner relative">
+                        <div class="uppercase text-xs tracking-widest mb-3">Insurance reimbursements</div>
+                        <div class="text-6xl font-semibold text-emerald-500">55%</div>
+                        <div class="absolute top-8 right-8 text-4xl">★</div>
+                        <p class="text-slate-500 mt-6">Corporate &amp; individual plans — majority of revenue</p>
+                    </div>
+                    <div class="bg-white rounded-3xl p-8 shadow-inner">
+                        <div class="uppercase text-xs tracking-widest mb-3">Medical tourism</div>
+                        <div class="text-6xl font-semibold text-emerald-500">+</div>
+                        <p class="text-slate-500 mt-6">High-margin international patients</p>
+                    </div>
+                    <div class="bg-white rounded-3xl p-8 shadow-inner">
+                        <div class="uppercase text-xs tracking-widest mb-3">Ancillary + Digital</div>
+                        <div class="text-6xl font-semibold text-emerald-500">Growing</div>
+                        <p class="text-slate-500 mt-6">IVF, dermatology, virtual consults</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 5: MARKET OPPORTUNITY -->
+        <div id="slide-4" class="slide min-h-screen px-8 flex items-center bg-slate-900">
+            <div class="max-w-screen-2xl mx-auto w-full">
+                <span class="text-emerald-400 font-semibold">04 • UAE MARKET TAILWINDS</span>
+                <h2 class="heading-font text-5xl mb-12">Positioned in the Fastest-Growing Private Healthcare Hub</h2>
+                
+                <div class="flex gap-12">
+                    <div class="flex-1">
+                        <ul class="space-y-8 text-3xl">
+                            <li class="flex items-start gap-x-6"><span class="text-5xl text-[#00d4aa] font-light">01</span> Expat population + medical tourism boom</li>
+                            <li class="flex items-start gap-x-6"><span class="text-5xl text-[#00d4aa] font-light">02</span> Insurance penetration &amp; mandatory coverage</li>
+                            <li class="flex items-start gap-x-6"><span class="text-5xl text-[#00d4aa] font-light">03</span> Government push for private sector participation</li>
+                            <li class="flex items-start gap-x-6"><span class="text-5xl text-[#00d4aa] font-light">04</span> Dubai &amp; Abu Dhabi as luxury health destinations</li>
+                        </ul>
+                    </div>
+                    <div class="flex-1 bg-white/5 rounded-3xl p-8 text-slate-300">
+                        Mediclinic is already embedded in the right cities with the right network. Expansion (new facilities + capacity ramps) + digital channels create multiple levers for market share gains.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 6: INNOVATION -->
+        <div id="slide-5" class="slide min-h-screen bg-gradient-to-br from-slate-900 to-emerald-900 px-8 flex items-center">
+            <div class="max-w-screen-2xl mx-auto">
+                <span class="text-emerald-300 font-semibold">05 • FUTURE-PROOFING</span>
+                <h2 class="heading-font text-5xl mb-10">Digital Transformation &amp; Value-Based Care</h2>
+                
+                <div class="grid grid-cols-12 gap-8">
+                    <div class="col-span-7">
+                        <div class="p-8 bg-white/10 rounded-3xl flex items-center gap-8">
+                            <div class="text-8xl">📱</div>
+                            <div>
+                                <div class="text-3xl">Mediclinic App + Virtual Health Service</div>
+                                <p class="mt-3 text-xl">Seamless patient journeys, loyalty, higher utilization, and new revenue streams beyond physical facilities.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-span-5 space-y-8">
+                        <div class="bg-white/10 rounded-3xl p-6 text-xl">Health Experience Hub in Dubai Hills Mall — prevention as a profit center</div>
+                        <div class="bg-white/10 rounded-3xl p-6 text-xl">Specialised programs (Woman, Baby, Oncology screening) drive repeat visits</div>
+                        <div class="bg-white/10 rounded-3xl p-6 text-xl">International best-practice sharing from group operations</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 7: INVESTMENT THESIS -->
+        <div id="slide-6" class="slide min-h-screen px-8 flex items-center bg-white text-slate-900">
+            <div class="max-w-screen-2xl mx-auto">
+                <span class="text-emerald-600 font-semibold">06 • INVESTMENT THESIS</span>
+                <h2 class="heading-font text-5xl mb-12">Why Funds Should Invest Now</h2>
+                
+                <div class="grid grid-cols-12 gap-x-8 gap-y-12">
+                    <div class="col-span-4">
+                        <div class="uppercase text-xs mb-2">MOAT</div>
+                        <h3 class="text-3xl">High barriers to entry + brand reputation</h3>
+                        <p class="mt-6">Capital-intensive hospitals + regulatory approvals + doctor networks = strong defensibility</p>
+                    </div>
+                    <div class="col-span-4">
+                        <div class="uppercase text-xs mb-2">GROWTH</div>
+                        <h3 class="text-3xl">Multiple expansion levers</h3>
+                        <p class="mt-6">Organic (new facilities), digital scaling, medical tourism, and preventive care programs</p>
+                    </div>
+                    <div class="col-span-4">
+                        <div class="uppercase text-xs mb-2">ESG + RETURNS</div>
+                        <h3 class="text-3xl">Patient outcomes + predictable margins</h3>
+                        <p class="mt-6">Delivers both attractive financial returns and measurable societal impact in a high-growth emerging market</p>
+                    </div>
+                </div>
+                
+                <div class="mt-16 text-center border border-emerald-300 text-emerald-700 rounded-3xl py-6 px-12 inline-flex items-center gap-x-3 text-xl mx-auto">
+                    <span>Stable cash flows • International governance • Scalable digital platform • UAE macro tailwinds</span>
+                    <span class="text-4xl">→</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 8: KEY METRICS &amp; EDGE -->
+        <div id="slide-7" class="slide min-h-screen bg-slate-950 px-8 flex items-center">
+            <div class="max-w-screen-2xl mx-auto">
+                <h2 class="heading-font text-5xl text-center mb-12">Competitive Edge Summary</h2>
+                <div class="flex justify-center gap-8 flex-wrap">
+                    <div class="px-8 py-6 border border-[#00d4aa]/30 rounded-3xl text-center w-72">
+                        <div class="text-[#00d4aa] text-2xl">Premium + Patient-Centric</div>
+                        <p class="text-slate-400 mt-4">Internationally accredited care with personalised journeys</p>
+                    </div>
+                    <div class="px-8 py-6 border border-[#00d4aa]/30 rounded-3xl text-center w-72">
+                        <div class="text-[#00d4aa] text-2xl">Continuum of Care</div>
+                        <p class="text-slate-400 mt-4">Hospital → outpatient → prevention → virtual = higher lifetime value</p>
+                    </div>
+                    <div class="px-8 py-6 border border-[#00d4aa]/30 rounded-3xl text-center w-72">
+                        <div class="text-[#00d4aa] text-2xl">Global Backing</div>
+                        <p class="text-slate-400 mt-4">Mediclinic International expertise, procurement scale, clinical protocols</p>
+                    </div>
+                    <div class="px-8 py-6 border border-[#00d4aa]/30 rounded-3xl text-center w-72">
+                        <div class="text-[#00d4aa] text-2xl">Resilient Revenue</div>
+                        <p class="text-slate-400 mt-4">Insurance-heavy + medical tourism diversification</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 9: CONCLUSION -->
+        <div id="slide-8" class="slide min-h-screen hero-bg flex items-center px-8">
+            <div class="max-w-screen-2xl mx-auto text-center">
+                <div class="max-w-2xl mx-auto">
+                    <h1 class="heading-font text-6xl mb-8">Mediclinic Middle East is a rare blend of:</h1>
+                    <div class="text-4xl text-[#00d4aa] mb-12">Defensive cash flows + High-growth upside + Digital innovation + Global standards</div>
+                    
+                    <p class="text-2xl text-slate-300 mb-12">For private equity, sovereign funds, or healthcare-focused investors seeking stable returns in a resilient, high-barrier sector with clear expansion runway.</p>
+                    
+                    <button onclick="window.location.reload()" 
+                            class="px-16 py-7 text-2xl bg-white text-slate-950 font-semibold rounded-3xl inline-flex items-center gap-x-4 hover:scale-105">
+                        READY TO INVEST IN MEDICLINIC MIDDLE EAST?
+                        <span class="text-4xl">🩺</span>
+                    </button>
+                    
+                    <div class="mt-16 text-slate-400 text-sm flex items-center justify-center gap-x-8">
+                        <div>Standalone presentation • Built from official Mediclinic.ae business model</div>
+                        <div class="px-4 py-1 bg-white/10 rounded-3xl">April 2026</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        /**
+         * Standalone Presentation Script
+         * Fully functional HTML + Tailwind + JS slide deck for Mediclinic Middle East investment thesis
+         */
+        let currentSlide = 0
+        const totalSlides = 9
+        let autoPlayInterval = null
+        let isPlaying = false
+        
+        function initTailwind() {
+            return {
+                config(userConfig = {}) {
+                    return {
+                        configUser: userConfig,
+                        theme: {
+                            extend: {},
+                        },
+                    }
+                },
+                theme(config) {
+                    return {
+                        ...this.defaultTheme(),
+                        ...config,
+                    }
+                },
+                defaultTheme() {
+                    return {
+                        extend: {},
+                    }
+                },
+            }
+        }
+        
+        function init() {
+            // Tailwind CDN setup
+            const config = initTailwind().config()
+            document.documentElement.setAttribute('data-tailwind-config', JSON.stringify(config))
+            
+            // Render progress dots
+            const dotsContainer = document.getElementById('progress-dots')
+            for (let i = 0; i < totalSlides; i++) {
+                const dot = document.createElement('div')
+                dot.className = `nav-dot w-3 h-3 rounded-full bg-white/30 cursor-pointer`
+                dot.onclick = () => navigateTo(i)
+                dotsContainer.appendChild(dot)
+            }
+            updateUI()
+            
+            // Keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight') nextSlide()
+                if (e.key === 'ArrowLeft') prevSlide()
+                if (e.key === ' ') {
+                    e.preventDefault()
+                    togglePlay()
+                }
+            })
+            
+            console.log('%c✅ Mediclinic Middle East Investment Presentation ready!', 'color:#00d4aa; font-family:monospace;')
+        }
+        
+        function updateUI() {
+            // Update counter
+            document.getElementById('slide-counter').innerHTML = 
+                String(currentSlide + 1).padStart(2, '0') + ' / ' + String(totalSlides).padStart(2, '0')
+            
+            // Highlight active dots
+            const dots = document.querySelectorAll('#progress-dots > div')
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === currentSlide)
+            })
+            
+            // Hide all slides and show current
+            for (let i = 0; i < totalSlides; i++) {
+                const slide = document.getElementById(`slide-${i}`)
+                if (slide) {
+                    slide.style.display = (i === currentSlide) ? 'flex' : 'none'
+                }
+            }
+        }
+        
+        function navigateTo(index) {
+            if (index < 0 || index >= totalSlides) return
+            currentSlide = index
+            updateUI()
+        }
+        
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides
+            updateUI()
+        }
+        
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides
+            updateUI()
+        }
+        
+        function togglePlay() {
+            const btn = document.getElementById('play-btn')
+            const text = document.getElementById('play-text')
+            
+            isPlaying = !isPlaying
+            
+            if (isPlaying) {
+                text.textContent = '❚❚ PAUSE'
+                btn.classList.add('bg-[#00d4aa]', 'text-slate-950')
+                autoPlayInterval = setInterval(() => {
+                    nextSlide()
+                }, 4200)
+            } else {
+                text.textContent = '▶ AUTO PLAY'
+                btn.classList.remove('bg-[#00d4aa]', 'text-slate-950')
+                clearInterval(autoPlayInterval)
+            }
+        }
+        
+        // Bootstrap the entire presentation
+        window.onload = init
+    </script>
+</body>
+</html>
+```
